@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metawipe"
+version = "0.1.0"
+description = "Strip metadata from photos, videos and PDFs, then prove it's gone. Zero dependencies."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "0xmrcl"}]
+keywords = ["metadata", "exif", "privacy", "cli", "strip-metadata", "gps", "xmp", "jpeg", "png", "mp4", "pdf"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Security",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/zeroXmrcl/metawipe"
+Issues = "https://github.com/zeroXmrcl/metawipe/issues"
+
+[project.scripts]
+metawipe = "metawipe.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
