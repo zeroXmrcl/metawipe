@@ -150,6 +150,9 @@ def _process(path: Path, root: Optional[Path], explicit: bool, args, opts: Optio
     except (OSError, FormatError, UnsupportedFile) as e:
         rec.update(status="error", error=str(e) if not isinstance(e, OSError) else (e.strerror or str(e)))
         return rec
+    except Exception as e:  # a parser bug must not abort a whole batch
+        rec.update(status="error", error=f"internal error ({type(e).__name__}: {e}), please report this")
+        return rec
     rec["format"] = res.format
     rec["removed"] = [i.to_dict() for i in res.items if i.remove]
     rec["kept"] = [i.to_dict() for i in res.items if not i.remove]
