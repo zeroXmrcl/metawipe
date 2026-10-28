@@ -38,9 +38,6 @@ You can also run it from a checkout without installing: `PYTHONPATH=src python -
 
 ## Usage
 
-This is real output from the current version (sample files generated for the demo; the
-GPS position is a public landmark):
-
 ```console
 $ metawipe inspect vacation.jpg
 vacation.jpg  [JPEG, 22.6 KB]
@@ -77,20 +74,6 @@ $ metawipe inspect --check vacation.clean.jpg && echo "no metadata left"
 vacation.clean.jpg  [JPEG, 22.2 KB]
   keep    APP0 JFIF (18 B)  [needed for rendering]
 no metadata left
-```
-
-Cross-checked with ExifTool 13.60 (not needed by metawipe, used here as an independent check):
-
-```console
-$ exiftool -s -GPSPosition -Make -Model -DateTimeOriginal -Software -Comment vacation.jpg
-GPSPosition                     : 48 deg 51' 29.70" N, 2 deg 17' 40.20" E
-Make                            : ExampleCam
-Model                           : EC-1
-DateTimeOriginal                : 2021:06:01 10:00:00
-Software                        : Example Firmware 1.0
-Comment                         : shot by example
-$ exiftool -s -GPSPosition -Make -Model -DateTimeOriginal -Software -Comment vacation.clean.jpg
-$
 ```
 
 More examples:
